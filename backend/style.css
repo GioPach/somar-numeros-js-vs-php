@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+
+:root {
+    --blue: rgb(6, 113, 201);
+    --dark-blue: rgb(7, 72, 126);
+    --red: rgb(196, 28, 28);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header {
+    padding: 2rem;
+    color: #fff;
+    background-color: var(--blue);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+}
+
+section#soma {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+section#soma h2 {
+    display: block;
+    color: var(--blue);
+    padding: .5rem;
+    width: 50%;
+    border-bottom: 2.5px solid var(--blue);
+}
+
+section#soma form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 700px;
+    width: 100%;
+    gap: 3rem;
+}
+
+form div.inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form div.form-group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+form div.form-group label {
+    color: #222;
+}
+
+form div.form-group input {
+    color: #333;
+    padding: 5px;
+}
+
+form button {
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid #555;
+    border-radius: 3px;
+    width: 100px;
+    padding: 3px;
+    background-color: var(--blue);
+    transform: .3s;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+div.resultado {
+    color: var(--blue);
+}
+
+div.resultado output[name="msg-final"] {
+    color: var(--dark-blue);
+}
+
+/*-- Validação ---*/
+
+
+input[valido=false] {
+    border: 2px solid var(--red);
+}
+
+input[valido=false] ~ small.msg-erro  {
+    color: var(--red);
+}
+
+input[valido=true] {
+    border: 2px solid var(--blue);
+}
+
+div.resultado output[valido=true] {
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+}
+
+div.resultado output[valido=false] {
+    color: var(--red);
+}
+
+/*----------------------*/
+
+
+
+
+input:focus {
+    outline: none;
+}
+
+/* Remove arrows from number input */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+@media (max-width: 420px) {
+    form div.form-group{
+        flex-direction: column;
+    }
+}
