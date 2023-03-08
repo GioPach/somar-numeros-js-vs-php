@@ -1,8 +1,8 @@
 import Sorteador from "../utils/sorteador.js";
 
 export default class StateManager {
-  static atualizarEstadoForm(input, msg, estado) {
-    if (estado) {
+  static atualizarEstadoForm(input, msg, isValido) {
+    if (isValido) {
       input.setAttribute("valido", true);
       msg.textContent = "";
     } else {
@@ -11,9 +11,9 @@ export default class StateManager {
     }
   }
 
-  static atualizarEstadoOutput(outputSoma, estado) {
+  static atualizarEstadoOutput(outputSoma, isValido) {
     const msgFinal = document.querySelector('output[name="msg-final"]');
-    if (estado) {
+    if (isValido) {
       outputSoma.setAttribute("valido", true);
       const sorteador = new Sorteador({
         1: "Boa conta!",

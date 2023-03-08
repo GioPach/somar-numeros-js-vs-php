@@ -24,7 +24,7 @@ function sendRequestSoma(output) {
   const $form = $("form#soma");
   $.ajax({
     type: "POST",
-    url: "http://localhost/somar-php/somar.php",
+    url: "http://localhost/somar-numeros-js-vs-php/somar.php",
     data: $form.serialize(),
     success: function (response) {
       $(output).text(response);
